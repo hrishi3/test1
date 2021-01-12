@@ -22,7 +22,9 @@ def allowed_file(filename):
 
 
 @app.route('/', methods=['GET', 'POST'])
+
 def index():
+    '''
     if request.method == 'POST':
         if 'file' not in request.files:
             flash('No file attached in request')
@@ -39,7 +41,7 @@ def index():
                 "processed_img":'static/downloads/'+filename,
                 "uploaded_img":'static/uploads/'+filename
             }
-            return render_template("index.html",data=data)  
+            return render_template("index.html",data=data)  '''
     return render_template('index.html')
 
 
