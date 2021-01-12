@@ -3,7 +3,7 @@ from flask import Flask, request, redirect, url_for, render_template, send_from_
 from werkzeug.utils import secure_filename
 import cv2
 import numpy as np
-
+'''
 UPLOAD_FOLDER ='static/uploads/'
 DOWNLOAD_FOLDER = 'static/downloads/'
 ALLOWED_EXTENSIONS = {'jpg', 'png','.jpeg'}
@@ -19,7 +19,7 @@ app.config['MAX_CONTENT_LENGTH'] = 6 * 1024 * 1024
 
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
-
+'''
 
 @app.route('/', methods=['GET', 'POST'])
 
@@ -44,7 +44,7 @@ def index():
             return render_template("index.html",data=data)  '''
     return render_template('index.html')
 
-
+'''
 def process_file(path, filename):
     detect_object(path, filename)
     
@@ -57,7 +57,7 @@ def detect_object(path, filename):
     blurred = cv2.GaussianBlur(inverted_image, (21, 21), 0)
     inverted_blurred = 255 - blurred
     pencil_sketch = cv2.divide(gray_image, inverted_blurred, scale=256.0)
-    cv2.imwrite(f"{DOWNLOAD_FOLDER}{filename}",pencil_sketch)
+    cv2.imwrite(f"{DOWNLOAD_FOLDER}{filename}",pencil_sketch) '''
   
 # download 
 # @app.route('/uploads/<filename>')
