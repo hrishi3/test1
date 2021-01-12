@@ -1,4 +1,4 @@
-    import os
+import os
 from flask import Flask, request, redirect, url_for, render_template, send_from_directory,flash 
 from werkzeug.utils import secure_filename
 import cv2
@@ -55,8 +55,6 @@ def detect_object(path, filename):
     blurred = cv2.GaussianBlur(inverted_image, (21, 21), 0)
     inverted_blurred = 255 - blurred
     pencil_sketch = cv2.divide(gray_image, inverted_blurred, scale=256.0)
-
-
     cv2.imwrite(f"{DOWNLOAD_FOLDER}{filename}",pencil_sketch)
   
 # download 
