@@ -1,4 +1,4 @@
-import os
+    import os
 from flask import Flask, request, redirect, url_for, render_template, send_from_directory,flash 
 from werkzeug.utils import secure_filename
 import cv2
@@ -65,4 +65,5 @@ def detect_object(path, filename):
 #     return send_from_directory(app.config['DOWNLOAD_FOLDER'], filename, as_attachment=True)
 
 if __name__ == '__main__':
+    app.debug=True
     app.run()
